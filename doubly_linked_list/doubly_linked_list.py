@@ -71,12 +71,12 @@ class DoublyLinkedList:
             current_head = self.head
             self.head = None
             self.tail = None
-            return current_head
+            return current_head.value
         else:
             current_head = self.head
             self.head = self.head.next
             self.head.prev = None
-            return current_head
+            return current_head.value
 
     def add_to_tail(self, value):
         new_node = ListNode(value, next=None, prev=None)
@@ -97,12 +97,12 @@ class DoublyLinkedList:
             current_tail = self.tail
             self.head = None
             self.tail = None
-            return current_tail
+            return current_tail.value
         else:
             current_tail = self.tail
             self.tail = self.tail.prev
             self.tail.next = None
-            return current_tail
+            return current_tail.value
 
     def move_to_front(self, node):
         if node == self.head:
